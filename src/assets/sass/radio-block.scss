@@ -1,0 +1,115 @@
+.visually-hidden, input[type='checkbox'].visually-hidden, input[type='radio'].visually-hidden { position: absolute; overflow: hidden; clip: rect(0 0 0 0); width: 1px; height: 1px; margin: -1px; padding: 0; white-space: nowrap; border: 0; clip-path: inset(100%); }
+
+.#{$prefix}radio-block {
+    &__title {
+        margin-bottom: 7px;
+        font-size: 14px;
+        line-height: 18px;
+        color: $colorGreyDark;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 9px;
+        text-align: center;
+        font: inherit;
+        width: 60px;
+        height: 54px;
+        color: $colorDark;
+        background-color: $colorGreyLight;
+        border-radius: 8px;
+
+        @media (min-width: 375px) {
+            width: 77px;
+        }
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            justify-content: center;
+            padding-top: 0;
+            width: 169px;
+        }
+
+        &--small {
+            justify-content: center;
+            flex-direction: row;
+            padding-top: 0;
+            margin-bottom: 20px;
+            width: 100%;
+            height: 54px;
+            border-radius: 10px;
+            cursor: pointer;
+
+            @media (min-width: 375px) {
+                width: 100%;
+                flex-direction: row;
+            }
+
+            @media (min-width: 768px) {
+                flex-direction: row;
+                margin-bottom: 24px;
+                width: 274px;
+            }
+
+            &:hover {
+                @media (min-width: 1200px) {
+                    background-color: $colorDefault;
+                }
+            }
+        }
+
+        &--empty {
+            padding-top: 12px;
+            padding-right: 10px;
+            padding-left: 10px;
+            width: 94px;
+            font-size: 14px;
+            line-height: 16px;
+
+            @media (min-width: 768px) {
+                width: 169px;
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    &__icon {
+        display: none;
+    }
+
+    &__day-label {
+        margin-top: -6px;
+        font-weight: 500;
+        font-size: 9px;
+        line-height: 18px;
+        opacity: 0.5;
+        color: inherit;
+
+        @media (min-width: 768px) {
+            margin-top: 0;
+            margin-left: 5px;
+            font-size: 12px;
+        }
+    }
+}
+
+input:checked + .#{$prefix}radio-block__item {
+    background-color: $colorDefault;
+
+    .#{$prefix}radio-block__icon {
+        @media (min-width: 768px) {
+            display: flex;
+            margin-right: 10px;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+/* Форма - алерт
+------------------------------ */
+
+.#{$prefix}form-alert {
+    display: flex;
+    align-items: center;
+    padding: 27px 26px;
+    margin-bottom: 32px;
+    background: $colorOrangeLight;
+    border: 2px solid $colorOrange;
+    border-radius: 14px;
+
+    @media (max-width: $screenS) {
+        padding: 18px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__icon {
+        min-width: 40px;
+        width: 40px;
+        height: 38px;
+        margin-right: 20px;
+        fill: $colorDark;
+
+        @media (max-width: $screenS) {
+            margin-right: auto;
+            margin-bottom: 14px;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 26px;
+        color: $colorDark;
+
+        @media (max-width: $screenS) {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+.#{$prefix}link-block {
+    &__wrap {
+        margin: 0 auto;
+        width: 275px;
+
+        @media (min-width: 375px) {
+            width: 343px;
+        }
+
+        @media (min-width: 768px) {
+            width: 700px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        font-family: $fontSecondary;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        color: $colorDark;
+
+        @media (min-width: 768px) {
+            margin-bottom: 8px;
+            font-size: 32px;
+            line-height: 38px;
+        }
+    }
+
+    &__sub-title {
+        margin-bottom: 29px;
+        font-size: 16px;
+        line-height: 22px;
+
+        @media (min-width: 768px) {
+            margin-bottom: 42px;
+            font-size: 18px;
+            line-height: 26px;
+        }
+    }
+
+    &__btn-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 4px;
+        margin-left: auto;
+        padding: 0;
+        width: 100%;
+        max-width: 338px;
+        height: 60px;
+        font-size: 18px;
+        line-height: 25px;
+        color: $colorBlue;
+        background: $colorWhite;
+        border: 2px solid $colorGreyLight2;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    &__btn-wrap {
+        margin-bottom: 54px;
+    }
+
+    &__btn-sub-title {
+        font-size: 12px;
+        line-height: 16px;
+        color: $colorGrey;
+
+        @media (min-width: 1200px) {
+            &:hover {
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .#{$prefix}form-footer {
+        margin-top: -10px;
+    }
+}

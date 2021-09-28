@@ -1,0 +1,235 @@
+/* Форма - шаги
+------------------------------ */
+
+.#{$prefix}steps {
+
+    [data-step-visible] {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+    }
+
+    @for $i from 1 through 10 {
+        &[data-steps="#{$i}"] [data-step-visible~="#{$i}"] {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+        }
+    }
+
+    @for $i from 1 through 10 {
+        &[data-steps="#{$i}"] [data-step-hidden~="#{$i}"] {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+        }
+    }
+
+    &__header {
+        position: relative;
+        padding-top: 84px;
+        z-index: 2;
+
+        @media (max-width: $screenS) {
+            padding-top: 80px;
+        }
+    }
+
+    &-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 80px;
+        padding: 0 16px 0 16px;
+        font-size: 16px;
+        line-height: 20px;
+        background-color: $colorDark;
+        color: #fff;
+        text-align: center;
+        max-width: 964px;
+        width: 100%;
+        z-index: 2;
+
+        @media (min-width: $screenS + 1) {
+            height: 85px;
+            padding: 0 150px 1px 150px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            margin: -1px -1px 0 -1px;
+            width: calc(100% + 2px);
+            font-size: 20px;
+            line-height: 26px;
+        }
+
+        @media (max-width: $screenS) {
+            transition: height $transitionSpeed / 2;
+
+            ._fixed--short & {
+                height: 70px;
+            }
+        }
+
+        &__prev {
+            position: absolute;
+            top: 28px;
+            left: 32px;
+            font-size: 18px;
+            line-height: 26px;
+            color: $colorGrey;
+            transition: color $transitionSpeed, opacity $transitionSpeed, visibility $transitionSpeed;
+            cursor: pointer;
+            white-space: nowrap;
+            user-select: none;
+            outline: none;
+
+            @media (max-width: $screenS) {
+                display: none;
+            }
+
+            [data-steps="1"] & {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            ._desktop &:focus,
+            ._desktop &:hover {
+                color: #fff !important;
+            }
+
+            svg {
+                display: inline-block;
+                width: 8px;
+                height: 15px;
+                position: relative;
+                top: 1px;
+                margin-right: 16px;
+                fill: currentColor;
+                pointer-events: none;
+            }
+
+            .#{$prefix}form & {
+                color: $colorGrey;
+            }
+        }
+
+        &__text {
+            user-select: none;
+        }
+
+        &__step {
+            white-space: nowrap;
+            color: $colorGrey;
+        }
+
+        &__bullets {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 2px;
+
+            @media (min-width: $screenS + 1) {
+                position: absolute;
+                top: 0;
+                right: 32px;
+                height: 100%;
+            }
+
+            @media (max-width: $screenS) {
+                margin-top: 7px;
+                overflow: hidden;
+                height: 9px;
+                padding-bottom: 0;
+                transition: opacity $transitionSpeed / 2, height $transitionSpeed / 2;
+
+                ._fixed--short & {
+                    height: 0;
+                    opacity: 0;
+                }
+            }
+
+            i {
+                display: block;
+                width: 10px;
+                height: 10px;
+                background-color: $colorGreyDark;
+                border: 1px solid $colorGreyDark;
+                border-radius: 50%;
+                transition: background-color $transitionSpeed, border-color $transitionSpeed;
+
+                @media (max-width: $screenS) {
+                    width: 7px;
+                    height: 7px;
+
+                    & + i {
+                        margin-left: 7px;
+                    }
+                }
+
+                & + i {
+                    margin-left: 8px;
+                }
+            }
+
+            i.__active {
+                background-color: $colorDefault;
+                border-color: transparent;
+
+                ~ i {
+                    background-color: transparent;
+                }
+            }
+        }
+
+        &__pin {
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 6px;
+            opacity: 0;
+            background-color: $colorDefault;
+            transition: left $transitionSpeed * 2, opacity $transitionSpeed / 2;
+        }
+    }
+
+    &._fixed--short &-nav__pin,
+    &._bottom &-nav__pin {
+        opacity: 1;
+    }
+
+    &._fixed &-nav {
+        position: fixed;
+        top: 0;
+        left: auto;
+        border-radius: 0;
+    }
+
+    &__list {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.#{$prefix}step {
+    position: relative;
+    top: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transitionSpeed 0s, visibility $transitionSpeed 0s, position $transitionSpeed 0s;
+
+    &.__active {
+        position: initial;
+        overflow: visible;
+        opacity: 1;
+        height: auto;
+        visibility: visible;
+        transition: opacity $transitionSpeed $transitionSpeed, visibility $transitionSpeed $transitionSpeed, position $transitionSpeed $transitionSpeed;
+    }
+}

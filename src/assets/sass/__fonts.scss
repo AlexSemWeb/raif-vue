@@ -1,0 +1,45 @@
+/* Шрифты
+------------------------------ */
+
+@font-face {
+    font-family: 'ccform Navigo';
+    src: url('../fonts/Navigo-Regular-Web.woff2') format('woff2'), url('../fonts/Navigo-Regular-Web.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ccform Navigo';
+    src: url('../fonts/Navigo-Bold-Web.woff2') format('woff2'), url('../fonts/Navigo-Bold-Web.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ALS Hauss';
+    src: url('../fonts/ALSHauss-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'ALS Hauss';
+    src: url('../fonts/ALSHauss-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal
+}
+
+// macintosh|ios
+@font-face {
+    font-family: 'ALS Hauss mac';
+    src: url('../fonts/ALS_Hauss-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'ALS Hauss mac';
+    src: url('../fonts/ALS_Hauss-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal
+}

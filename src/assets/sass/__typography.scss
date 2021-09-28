@@ -1,0 +1,433 @@
+/* Общая типографика
+------------------------------ */
+
+.#{$prefix}text {
+    font-size: 16px;
+    line-height: 24px;
+
+    @media (max-width: $screenS) {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &--compact {
+        font-size: 14px;
+        line-height: 18px;
+
+        @media (max-width: $screenS) {
+            font-size: 13px;
+            line-height: 16px;
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+        line-height: 152%;
+
+        @media (max-width: $screenS) {
+            hyphens: auto;
+        }
+    }
+
+    h1 {
+        font-size: 50px;
+        line-height: 121%;
+        margin-top: 2em;
+        margin-bottom: 1em;
+
+        @media (max-width: $screenS) {
+            font-size: 30px;
+            line-height: 123%;
+        }
+    }
+
+    h2 {
+        font-size: 40px;
+        line-height: 120%;
+        margin-top: 2em;
+        margin-bottom: 1em;
+
+        @media (max-width: $screenS) {
+            font-size: 27px;
+        }
+
+        h1 + &,
+        h2 + &,
+        h3 + &,
+        h4 + &,
+        h5 + &,
+        h6 + &,
+        [class^="title-h"] + & {
+            margin-top: 1em;
+        }
+    }
+
+    h3 {
+        font-size: 32px;
+        line-height: 152%;
+        margin-top: 2em;
+        margin-bottom: 1em;
+
+        @media (max-width: $screenS) {
+            font-size: 24px;
+            line-height: 134%;
+        }
+
+        h1 + &,
+        h2 + &,
+        h3 + &,
+        h4 + &,
+        h5 + &,
+        h6 + &,
+        [class^="title-h"] + & {
+            margin-top: 1em;
+        }
+    }
+
+    h4 {
+        font-size: 26px;
+        line-height: 152%;
+        margin-top: 2em;
+        margin-bottom: 1em;
+
+        @media (max-width: $screenS) {
+            font-size: 20px;
+            line-height: 134%;
+        }
+
+        h1 + &,
+        h2 + &,
+        h3 + &,
+        h4 + &,
+        h5 + &,
+        h6 + &,
+        [class^="title-h"] + & {
+            margin-top: 1em;
+        }
+    }
+
+    h5, h6 {
+        font-size: 19px;
+        line-height: 29px;
+        text-transform: uppercase;
+        color: $colorGrey;
+        margin-top: 2em;
+        margin-bottom: 1em;
+
+        @media (max-width: $screenS) {
+            font-size: 16px;
+            line-height: 134%;
+        }
+
+        h1 + &,
+        h2 + &,
+        h3 + &,
+        h4 + &,
+        h5 + &,
+        h6 + &,
+        [class^="title-h"] + & {
+            margin-top: 1em;
+        }
+    }
+
+    p {
+        padding: 0;
+        margin: 0 0 1em 0;
+    }
+
+    &--compact p {
+        margin-bottom: 1.3em;
+    }
+
+    b,
+    strong {
+        font-weight: bold;
+    }
+
+    i {
+        font-style: normal;
+    }
+
+
+    // Списки
+
+    ul,
+    ol {
+        display: block;
+        counter-reset: ol;
+        padding: 0;
+        margin: 0 0 24px 24px;
+        list-style: none;
+
+        @media (max-width: $screenS) {
+            margin: 0 0 20px 20px;
+        }
+
+        li {
+            display: block;
+            box-sizing: border-box;
+            position: relative;
+            margin-bottom: 24px;
+
+            @media (max-width: $screenS) {
+                margin-bottom: 20px;
+            }
+
+            &:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        ul,
+        ol {
+            margin-left: 24px;
+            list-style: none;
+            padding: 0;
+
+            @media (max-width: $screenS) {
+                margin-left: 20px;
+            }
+        }
+
+        ul {
+
+            > li {
+
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    position: absolute;
+                    left: -50px;
+                    top: 8px;
+                    box-sizing: border-box;
+                    border-radius: 50%;
+                }
+
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 11px;
+                    height: 11px;
+                    position: absolute;
+                    left: -48px;
+                    top: 10px;
+                    box-sizing: border-box;
+                    background: #fff;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        ol {
+
+            > li {
+
+                &:before {
+                    width: 50px;
+                    position: absolute;
+                    left: -50px;
+                    white-space: nowrap;
+                    font-weight: bold;
+                    font-size: 19px;
+                    -webkit-background-clip: text;
+
+                    html.ie & {
+                        background: transparent;
+                        color: $colorBlue;
+                    }
+
+                    @media (max-width: $screenM) {
+                        width: 45px;
+                        left: -45px;
+                    }
+
+                    @media (max-width: $screenS) {
+                        width: 40px;
+                        left: -40px;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    &--compact ul,
+    &--compact ol {
+        li {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 8px;
+
+            @media (max-width: $screenS) {
+                font-size: 14px;
+                line-height: 18px;
+                margin-bottom: 12px;
+            }
+        }
+    }
+
+    ul {
+
+        > li {
+
+            &:before {
+                content: '';
+                display: block;
+                width: 7px;
+                height: 7px;
+                position: absolute;
+                left: -24px;
+                top: 7px;
+                background-color: $colorDark;
+                box-sizing: border-box;
+
+                @media (max-width: $screenS) {
+                    left: -20px;
+                }
+            }
+        }
+
+        ol {
+            counter-reset: olu;
+
+            > li:before {
+                counter-increment: olu;
+                content: counters(olu, '');
+            }
+
+            ol {
+                counter-reset: olu2;
+
+                > li:before {
+                    counter-increment: olu2;
+                    content: counters(olu, '') '.' counters(olu2, '') '' ;
+                }
+            }
+        }
+
+        ul {
+
+            ol {
+                counter-reset: olu2;
+
+                li:before {
+                    counter-increment: olu2;
+                    content: counters(olu2, '');
+                }
+            }
+        }
+    }
+
+    ol {
+
+        > li {
+
+            &:before {
+                counter-increment: ol;
+                content: counters(ol, '') '.';
+                position: absolute;
+                left: -24px;
+                white-space: nowrap;
+                font-weight: bold;
+                -webkit-background-clip: text;
+
+                @media (max-width: $screenS) {
+                    left: -20px;
+                }
+            }
+        }
+
+        ol {
+            counter-reset: ol2;
+
+            > li:before {
+                counter-increment: ol2;
+                content: counters(ol, '') '.' counters(ol2, '') '';
+            }
+
+            ol {
+                counter-reset: ol3;
+
+                > li:before {
+                    counter-increment: ol3;
+                    content: counters(ol, '') '.' counters(ol2, '') '.' counters(ol3, '');
+                }
+            }
+        }
+
+        ul {
+
+            ol {
+                counter-reset: ol3;
+
+                li:before {
+                    counter-increment: ol3;
+                    content: counters(ol3, '');
+                }
+            }
+        }
+    }
+
+    sup {
+        display: inline-block;
+        margin: -6px 0 0 2px;
+        font-size: 13px;
+    }
+
+    &__title-big {
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: bold;
+        margin: 50px 0 30px 0;
+
+        @media (max-width: $screenS) {
+            font-size: 20px;
+            line-height: 26px;
+            margin: 40px 0 25px 0;
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    &-footnote {
+        position: relative;
+        font-size: 12px;
+        line-height: 16px;
+        color: $colorGreyDark;
+        padding: 35px 0 7px 0;
+        margin-top: 56px;
+
+        @media (max-width: $screenS) {
+            margin-top: 45px;
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 1px;
+            background-color: $colorGreyLight2;
+        }
+
+        sup {
+            position: absolute;
+            left: 0;
+            font-size: 9px;
+            margin: -4px 5px 0 0;
+        }
+
+        p {
+            position: relative;
+            padding: 0 0 0 12px;
+            margin: 0;
+        }
+    }
+}

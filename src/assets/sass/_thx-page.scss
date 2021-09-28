@@ -1,0 +1,219 @@
+.#{$prefix}thx-page {
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 16px;
+    max-width: 960px;
+    width: 100%;
+
+    @media (min-width: $screenS) {
+        padding-bottom: 28px;
+    }
+
+    &__container {
+        padding-top: 30px;
+
+        @media (min-width: $screenS) {
+            padding-top: 43px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: center;
+
+        &--last {
+            margin-bottom: 24px;
+
+            @media (min-width: $screenS) {
+                margin-bottom: 31px;
+            }
+        }
+    }
+
+    &__icon {
+        margin-bottom: 12px;
+        width: 50px;
+        height: 50px;
+
+        @media (min-width: $screenS) {
+            margin-bottom: 15px;
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    &__title-block {
+        color: $colorDark;
+    }
+
+    &__title {
+        margin-bottom: 11px;
+        font-family: 'ccform Navigo';
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        color: inherit;
+
+        @media (min-width: 400px) {
+            font-size: 28px;
+            line-height: 32px;
+        }
+
+        @media (min-width: $screenS) {
+            font-size: 32px;
+            line-height: 38px;
+        }
+    }
+
+    &__sub-title {
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: inherit;
+
+        @media (min-width: 400px) {
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        @media (min-width: $screenS) {
+            font-size: 18px;
+            line-height: 26px;
+        }
+    }
+
+    &__app {
+        padding-right: 10px;
+        padding-left: 10px;
+
+        @media (min-width: 400px) {
+            min-width: 365px;
+        }
+
+        @media (min-width: $screenS) {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .#{$prefix}thx-page__title-block {
+            margin-bottom: 24px;
+            color: $colorWhite;
+        }
+    }
+
+    &__app-icon {
+        width: 147px;
+        height: 48px;
+    }
+
+    &__app-container {
+        padding-top: 24px;
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 10px;
+        background-color: $colorDark;
+
+        @media (min-width: $screenS) {
+            padding-top: 32px;
+            padding-bottom: 24px;
+        }
+    }
+
+    &__app-wrap {
+        padding-bottom: 186px;
+        position: relative;
+        overflow: hidden;
+
+        @media (min-width: $screenS) {
+            padding-bottom: 0;
+            padding-left: 364px;
+            overflow: visible;
+        }
+
+        @media (min-width: 1024px) {
+            padding-left: 385px;
+        }
+    }
+
+    &__qr-wrap {
+        display: none;
+
+        @media (min-width: $screenS) {
+            display: flex;
+            margin-bottom: 23px;
+        }
+    }
+
+    &__qr-icon {
+        @media (min-width: $screenS) {
+            flex-shrink: 0;
+            margin-right: 22px;
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    &__qr-text {
+        @media (min-width: $screenS) {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            width: 210px;
+            font-family: inherit;
+            font-size: 13px;
+            line-height: 16px;
+            color: $colorWhite;
+        }
+    }
+
+    &__app-list {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-top: 0;
+        margin-right: auto;
+        margin-bottom: 26px;
+        margin-left: auto;
+        padding-left: 0;
+        list-style: none;
+
+        @media (min-width: 400px) {
+            justify-content: space-between;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 310px;
+        }
+
+
+        @media (min-width: $screenS) {
+            margin-bottom: 0;
+            margin-left: 0;
+        }
+    }
+
+    &__app-item:first-child {
+        margin-bottom: 10px;
+
+        @media (min-width: 400px) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        left: 50%;
+        bottom: -16px;
+        width: 244px;
+        height: auto;
+        transform: translateX(-50%);
+
+        @media (min-width: $screenS) {
+            width: 221px;
+            bottom: -24px;
+            left: 138px;
+            transform: none;
+        }
+    }
+}

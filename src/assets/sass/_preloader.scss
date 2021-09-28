@@ -1,0 +1,50 @@
+/* Прелоадер
+------------------------------ */
+
+##{$prefix}form {
+    position: relative;
+    min-height: 500px;
+
+    @media (max-width: $screenS) {
+        min-height: 200px;
+    }
+
+    &:before {
+        content: 'Загружается форма. Пожалуйста, подождите...';
+        display: block;
+        position: absolute;
+        top: 240px;
+        left: 15px;
+        right: 15px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity $transitionSpeed, visibility $transitionSpeed;
+
+        @media (max-width: $screenS) {
+            top: 100px;
+        }
+    }
+
+    &.#{$prefix}loading,
+    &:empty {
+        &:before {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    > * {
+        transition: opacity $transitionSpeed $transitionSpeed;
+    }
+
+    &.#{$prefix}loading {
+        > * {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+}

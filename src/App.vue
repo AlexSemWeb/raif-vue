@@ -1,28 +1,84 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- FORM -->
+    <transition name="fade" mode="out-in">
+      <div
+        class="prefix-form-wrap prefix-js-form-wrap"
+        :key="isLoaded"
+        v-if="isLoaded"
+      >
+        <form class="prefix-form prefix-js-form" novalidate>
+          <div class="prefix-form-inner">
+            <div class="prefix-form-content prefix-js-form-content">
+              <StepsLayout></StepsLayout>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="prefix-form" data-props='{"id":"CS0200-CB88"}' v-else></div>
+    </transition>
+
+    <!-- /.prefix-form -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import StepsLayout from "@/views/Index";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+  name: "App",
+  components: { StepsLayout },
+  data() {
+    return {
+      isLoaded: false,
+    };
+  },
+  mounted() {
+    this.isLoaded = true;
+  },
+};
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+  div,
+  span {
+    pointer-events: none;
+  }
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+  div,
+  span {
+    pointer-events: none;
+  }
+}
+.popup-show-enter-active,
+.popup-show-leave-active {
+  transition: all 0.3s;
+  div,
+  span {
+    pointer-events: none;
+  }
+}
+.popup-show-enter, .popup-show-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
+  @media (max-width: 767px) {
+    opacity: 1;
+    background-color: rgba(43, 45, 51, 0);
+  }
+  div,
+  span {
+    pointer-events: none;
+  }
+  .prefix-form-popup {
+    &-inner {
+      @media (max-width: 767px) {
+        transform: translateY(100%);
+      }
+    }
+  }
 }
 </style>

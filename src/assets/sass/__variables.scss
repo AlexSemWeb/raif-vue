@@ -1,0 +1,53 @@
+// Общие переменные
+//----------------------------
+
+// Глобальный префикс
+$prefix: prefix- !default;
+
+
+// Цвета
+
+$colorDefault: #FEE600; // Цвет по умолчанию
+$colorButtonHover: #F5D400;
+$colorDark: #2B2D33;
+$colorGreyLight: #F4F4F4;
+$colorGreyLight2: #E1E1E3;
+$colorGrey: #A2A4A6;
+$colorGreyDark: #808185;
+$colorBlueLight: #00C2FF;
+$colorBlue: #00AAFF;
+$colorBlueDark: #4C9ED9;
+$colorError: #E61E33;
+$colorWhite: #FFFFFF;
+$colorOrange: #F7E7DF;
+$colorOrangeLight: #FCF5F2;
+
+
+
+// Шрифты
+
+//$fontDefault: 'ccform Navigo', sans-serif;    // Шрифт по умолчанию
+$fontDefault: 'ALS Hauss',
+sans-serif; // Шрифт по умолчанию
+$fontDefaultMac: 'ALS Hauss Mac',
+"Helvetica Neue",
+sans-serif; // Шрифт по умолчанию для Mac IOS
+$fontSecondary: 'ccform Navigo',
+"Helvetica Neue",
+sans-serif;
+$fontSize: 20px; // Размер шрифта
+//$lineHeight: 33px;                            // Междустрочный интервал
+
+
+
+// Breakpoints
+$screenXS: 479px; // Для телефона
+$screenS: 767px; // Для планшета
+$screenM: 999px; // Для десктопа
+$screenL: 1299px; // Для больших десктопов
+$screenXL: 1900px; // Для очень больших десктопов
+
+
+
+// Стандартная скорость транзакций
+$transitionSpeed: 0.3s;

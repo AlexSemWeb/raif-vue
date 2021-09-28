@@ -1,0 +1,45 @@
+.#{$prefix}radio-block {
+    &__list-small-wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__list-small-block {
+        margin: 0 auto;
+        width: 275px;
+
+        @media (min-width: 375px) {
+            width: 343px;
+        }
+
+        @media (min-width: 768px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 574px;
+        }
+    }
+
+    &__small-block-title {
+        margin-bottom: 25px;
+        width: 100%;
+        font: inherit;
+        font-size: 18px;
+        line-height: 26px;
+        text-align: center;
+        color: $colorDark;
+
+        @media (min-width: 768px) {
+            font-size: 20px;
+            line-height: 38px
+        }
+    }
+}
+
+.#{$prefix}--fix-padding {
+    padding-top: 3px;
+
+    @media (min-width: 768px) {
+        padding-top: 0;
+    }
+}

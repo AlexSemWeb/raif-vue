@@ -1,0 +1,80 @@
+/* Форма - контрол - чекбокс
+------------------------------ */
+
+.#{$prefix}form-control--checkbox {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 16px;
+    line-height: 23px;
+    min-height: 24px;
+
+    @media (max-width: $screenS) {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .#{$prefix}form-control__label {
+        position: relative;
+        display: block;
+        padding-left: 36px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            //top: -2px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            border: 2px solid $colorGrey;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color $transitionSpeed, background-color $transitionSpeed;
+            cursor: pointer;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            //top: -2px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            background: url('../svg/checkbox.svg') no-repeat center center;
+            opacity: 0;
+            transition: opacity $transitionSpeed;
+            cursor: pointer;
+        }
+    }
+
+    input:checked ~ .#{$prefix}form-control__label {
+        &:before {
+            border-color: $colorDefault !important;
+            background-color: $colorDefault;
+        }
+
+        &:after {
+            opacity: 1;
+        }
+    }
+
+    ._desktop & label:hover {
+        .#{$prefix}form-control__label:before {
+            border-color: $colorGreyDark
+        }
+    }
+
+    input:focus ~ .#{$prefix}form-control__label:before {
+        border-color: $colorGreyDark
+    }
+}

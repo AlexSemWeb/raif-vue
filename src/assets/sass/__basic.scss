@@ -1,0 +1,146 @@
+/* Общее
+ ------------------------------ */
+
+.#{$prefix}form {
+    font-size: 16px;
+
+    * {
+        vertical-align: baseline;
+        font-weight: inherit;
+        font-family: inherit;
+        font-style: inherit;
+        font-size: 100%;
+        border: 0 none;
+        outline: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    &._no-visible-focus {
+
+        * {
+            outline: 0 !important;
+        }
+    }
+
+
+    // Выделение
+
+    ::selection {
+        color: $colorDark;
+        background: $colorDefault;
+    }
+
+
+
+    // IE дополнительные элементы в инпутах
+
+    ::-ms-clear {
+        display: none;
+    }
+
+    ::-ms-reveal {
+        display: none;
+    }
+
+    select::-ms-expand {
+        // display: none;
+    }
+
+    select::-ms-value {
+        background: none;
+        color: currentColor;
+    }
+
+    input {
+        -webkit-appearance: none;
+        -webkit-border-radius: 0;
+    }
+
+    // :disabled
+
+    ._disabled,
+    :disabled {
+        cursor: default;
+        pointer-events: none;
+        opacity: 0.7;
+        user-select: none;
+    }
+
+    .hidden-desktop {
+        @media (min-width: $screenS + 1) {
+            display: none;
+        }
+    }
+
+    .hidden-mobile {
+        @media (max-width: $screenS) {
+            display: none;
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    // Общие
+
+    &-w100 {
+        width: 100%;
+    }
+
+    &-w50 {
+        width: 50%;
+    }
+
+
+    /* Простые теги
+    ------------------------------ */
+
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: $colorBlue;
+        user-select: none;
+        // -webkit-touch-callout: none;
+        text-decoration-skip-ink: auto;
+
+        &[href^="mailto"],
+        &[href^="tel"] {
+            user-select: text;
+        }
+
+        &[href^="tel"] {
+            white-space: nowrap;
+        }
+    }
+
+    &._desktop {
+        a:hover:visited,
+        a:hover {
+            color: $colorBlueLight;
+        }
+
+        a:visited {
+            color: $colorBlueDark;
+        }
+    }
+
+    &__hide-element {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s 0.3s, visibility 0.3s 0.3s, position 0.6s 0.6s;
+    }
+
+    &__show-element {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s 0.3s, visibility 0.3s 0.3s;
+    }
+}
+
+.#{$prefix}gender-wrap-js {
+    width: 100%;
+}

@@ -1,0 +1,177 @@
+/* Форма - контрол - табы
+------------------------------ */
+.#{$prefix}form-control {
+
+    &--tabs {
+        overflow: hidden;
+
+        input {
+            position: absolute;
+            opacity: 0;
+        }
+    }
+
+    @media (min-width: $screenS + 1) {
+        &--tabs {
+            margin-top: 12px;
+            display: flex;
+            justify-content: space-between;
+            min-height: 24px;
+            border-bottom: 1px solid $colorGreyLight2;
+            padding-bottom: 13px;
+
+            label {
+                position: relative;
+                color: $colorGreyDark;
+                cursor: pointer;
+                font-size: 16px;
+                line-height: 30px;
+            }
+
+            ._desktop & label:hover {
+                .#{$prefix}form-control__label:before {
+                    border-color: $colorGreyDark
+                }
+            }
+
+            .#{$prefix}form-group & {
+                margin-bottom: 53px;
+            }
+
+            &-left {
+                justify-content: flex-start;
+
+                label {
+                    margin-right: 50px;
+                }
+            }
+        }
+
+        &__icon {
+            position: absolute;
+            top: 6px;
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            transition: fill $transitionSpeed / 2;
+        }
+
+        &--tabs &__label {
+            display: block;
+            padding-left: 30px;
+            color: currentColor;
+            transition: color $transitionSpeed / 2;
+        }
+
+        ._desktop &--tabs label:hover &__label,
+        &--tabs input:checked ~ &__label {
+            color: $colorDark;
+        }
+
+        ._desktop &--tabs label:hover svg,
+        &--tabs input:checked ~ svg {
+            fill: $colorDark;
+        }
+
+        &--tabs &__pin {
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+            width: 100px;
+            background-color: $colorDefault;
+            transition: left $transitionSpeed, width $transitionSpeed;
+        }
+
+    }
+
+    @media (max-width: $screenS) {
+        &--tabs {
+            border: 1px solid $colorGreyLight2;
+            border-radius: 4px;
+
+            label {
+                display: block;
+                position: relative;
+                color: $colorDark;
+
+                & + label {
+                    border-top: 1px solid $colorGreyLight2;
+                }
+
+                &:checked {
+                    background-color: #ccc;
+                }
+            }
+
+            input:checked ~ .#{$prefix}form-control__label {
+                background-color: $colorGreyLight;
+
+                &:before {
+                    border-color: $colorDefault !important;
+                    background-color: $colorDefault;
+                }
+
+                &:after {
+                    opacity: 1;
+                }
+            }
+
+            .#{$prefix}form-group & {
+                margin-bottom: 51px;
+            }
+        }
+
+        &__icon {
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            transition: fill $transitionSpeed / 2;
+        }
+
+        &--tabs &__label {
+            @include radio;
+            padding-left: 46px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 22px;
+            transition: background-color $transitionSpeed;
+
+            &:before {
+                width: 22px;
+                height: 22px;
+                left: auto;
+                right: 16px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &:after {
+                width: 10px;
+                height: 10px;
+                left: auto;
+                right: 22px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+.#{$prefix}form {
+    ._tab-hidden {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: none;
+    }
+}
