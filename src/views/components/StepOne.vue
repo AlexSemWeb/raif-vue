@@ -53,13 +53,13 @@
 </template>
 
 <script>
-    import PopupLayout from "@/components/popups/PopupLayout";
-    import PrivacyPopup from "@/components/popups/PrivacyPopup";
-    import NumberField from "@/components/inputs/NumberField";
-    import popupWork from "@/mixins/popupWork";
-    import phoneCheck from "@/mixins/phoneCheck";
+  import PopupLayout from "@/components/popups/PopupLayout";
+  import PrivacyPopup from "@/components/popups/PrivacyPopup";
+  import NumberField from "@/components/inputs/NumberField";
+  import popupWork from "@/mixins/popupWork";
+  import phoneCheck from "@/mixins/phoneCheck";
 
-    export default {
+  export default {
   name: "StepOne",
   components: { NumberField, PopupLayout, PrivacyPopup },
   mixins: [popupWork, phoneCheck],

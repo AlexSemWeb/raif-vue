@@ -23,10 +23,10 @@
 </template>
 
 <script>
-    import NumberField from "@/components/inputs/NumberField";
-    import phoneCheck from "@/mixins/phoneCheck";
+  import NumberField from "@/components/inputs/NumberField";
+  import phoneCheck from "@/mixins/phoneCheck";
 
-    export default {
+  export default {
   name: "ChangeNumberPopup",
   mixins: [phoneCheck],
   components: {

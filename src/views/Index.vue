@@ -31,12 +31,12 @@
 </template>
 
 <script>
-    import StepHeader from "@/views/components/StepHeader";
-    import StepOne from "@/views/components/StepOne";
-    import StepTwo from "@/views/components/StepTwo";
-    import StepThree from "@/views/components/StepThree";
+  import StepHeader from "@/views/components/StepHeader";
+  import StepOne from "@/views/components/StepOne";
+  import StepTwo from "@/views/components/StepTwo";
+  import StepThree from "@/views/components/StepThree";
 
-    export default {
+  export default {
   name: "stepsLayout",
   components: { StepOne, StepHeader, StepTwo, StepThree },
   data() {

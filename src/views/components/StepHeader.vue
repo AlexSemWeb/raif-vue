@@ -36,9 +36,9 @@
 </template>
 
 <script>
-    import {STEPS} from "@/constans/steps";
+  import {STEPS} from "@/constans/steps";
 
-    export default {
+  export default {
   name: "StepHeader",
   props: {
     step: {

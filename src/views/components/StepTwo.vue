@@ -73,14 +73,14 @@
 </template>
 
 <script>
-    import PopupLayout from "@/components/popups/PopupLayout";
-    import ChangeNumberPopup from "@/components/popups/ChangeNumberPopup";
-    import VerificationCode from "@/components/inputs/VerificationCode";
-    import popupWork from "@/mixins/popupWork";
-    import ResendCodePopup from "@/components/popups/ResendCodePopup";
-    import CodeHelpPopup from "@/components/popups/CodeHelpPopup";
+  import PopupLayout from "@/components/popups/PopupLayout";
+  import ChangeNumberPopup from "@/components/popups/ChangeNumberPopup";
+  import VerificationCode from "@/components/inputs/VerificationCode";
+  import popupWork from "@/mixins/popupWork";
+  import ResendCodePopup from "@/components/popups/ResendCodePopup";
+  import CodeHelpPopup from "@/components/popups/CodeHelpPopup";
 
-    export default {
+  export default {
   name: "StepTwo",
   mixins: [popupWork],
   props: {

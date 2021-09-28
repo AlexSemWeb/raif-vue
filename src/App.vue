@@ -23,9 +23,9 @@
 </template>
 
 <script>
-    import StepsLayout from "@/views/Index";
+  import StepsLayout from "@/views/Index";
 
-    export default {
+  export default {
   name: "App",
   components: { StepsLayout },
   data() {

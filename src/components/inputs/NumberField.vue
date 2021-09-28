@@ -33,10 +33,10 @@
 </template>
 
 <script>
-    import {TheMask} from "vue-the-mask";
-    import inputWork from "@/mixins/inputWork";
+  import {TheMask} from "vue-the-mask";
+  import inputWork from "@/mixins/inputWork";
 
-    export default {
+  export default {
   name: "NumberField",
   mixins: [inputWork],
   props: {
